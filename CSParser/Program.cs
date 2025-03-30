@@ -1,3 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using CSParser;
+using CSParser.Tokens;
+using CSParser.Types;
+using Newtonsoft.Json;
 
-Console.WriteLine("Hello, World!");
+Parser parser = new Parser();
+string program = "42";
+Token ast = parser.Parse(program);
+
+string json = Newtonsoft.Json.JsonConvert.SerializeObject(ast, Formatting.Indented);
+Console.WriteLine(json);

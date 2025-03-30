@@ -1,3 +1,3 @@
 ﻿namespace CSParser.Types;
 
-public record NumericLiteral();
+public record NumericLiteral(string type, int value); 
